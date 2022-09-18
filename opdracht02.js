@@ -5,7 +5,7 @@ let price = parseFloat(inputPrice);
 let tax = parseFloat(inputTax);
 
 if (price && tax) {
-    alert("De verkoopprijs = " + (inputPrice + (inputPrice * inputTax / 100));
+    alert("De verkoopprijs = " + (inputPrice + (inputPrice * inputTax / 100)));
 } else {
     alert("Oeps er ging iets fout.");
 }
