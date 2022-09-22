@@ -31,8 +31,16 @@ let fietsen = [
     },
 ];
 
+//Oplossing met een for-loop met index
+for (let i = 0; i < fietsen.length; i++) {
+    if (fietsen[i].prijs < 2500) {
+        console.log(fietsen[i]);
+    }
+};
+
+//Oplossing met een foreach loop
 fietsen.forEach((fiets) => {
     if (fiets.prijs < 2500) {
         console.log(fiets);
     }
-})
+});

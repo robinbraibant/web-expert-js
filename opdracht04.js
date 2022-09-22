@@ -5,9 +5,6 @@ console.log(`De gemiddelde prijs voor een fiets bedraagt ${average} euro.`);
 
 function averagePrice(prices) {
     let total = 0;
-    prices.forEach(price => {
-        total = total + price
-    });
-
+    prices.forEach(price => total = total + price);
     return total / prices.length;
 }

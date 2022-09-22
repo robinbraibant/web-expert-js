@@ -63,14 +63,14 @@ fietsen.forEach((fiets) => {
 });
 contentBlock.appendChild(list);
 
-//Events
-averageButton.addEventListener('click', () => {
-    let paragraph = document.createElement('p');
-    let price = Math.round(averagePrice(fietsen));
 
+//Events
+let paragraph = document.createElement('p');
+averageButton.addEventListener('click', () => {
+    let price = Math.round(averagePrice(fietsen));
     paragraph.innerText = `de gemiddelde prijs van de fietsen bedraagt € ${price}`;
-    parent.appendChild(paragraph);
-})
+});
+parent.appendChild(paragraph);
 
 function averagePrice(list) {
     total = 0;
@@ -80,17 +80,26 @@ function averagePrice(list) {
     return total / list.length;
 }
 
+
 //Extra
 topButton.addEventListener('click', () => {
+    //sorteer de lijst op basis van de score van het object
     let sortedList = fietsen.sort((a,b) => a.score - b.score);
+
+    //Draai de volgorde om, zodat de lijst aflopend kan getoond worden
     let reversedList = sortedList.reverse();
+    
+    //Maak de ongeordende lijst aan
     let list = document.createElement('ul');
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i <= 2 ; i++) {
         let listItem = document.createElement('li');
-        listItem.innerText = `${reversedList[i].merk} - ${reversedList[i].model}: score = ${reversedList[i].score}` ;
+        listItem.innerText = `${reversedList[i].merk} - ${reversedList[i].model}: score = ${reversedList[i].score}`;
         list.appendChild(listItem); 
     }
+
+    //Maak de div leeg
     contentBlock.innerHTML = '';
+
+    //voeg de lijst toe aan de div
     contentBlock.appendChild(list);
-    // console.log(sortedList.reverse());
-})
+});
